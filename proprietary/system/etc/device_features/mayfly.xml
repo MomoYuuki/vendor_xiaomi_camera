@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- MIUI ADD: Adapt_MIUIAdaptFrame-->
 <features>
 <!-- BSP BEGIN -->
-    <!--whether the device is ltpo screen -->
-    <bool name="is_ltpo_screen">false</bool>
     <!--whether the device is pad-->
     <bool name="is_pad">false</bool>
     <!--whether the device is xiaomi-->
-    <bool name="is_xiaomi">false</bool>
+    <bool name="is_xiaomi">true</bool>
     <!--whether the device is hongmi-->
-    <bool name="is_hongmi">true</bool>
-    <!--whether the device is redmi-->
-    <bool name="is_redmi">true</bool>
+    <bool name="is_hongmi">false</bool>
     <!--whether the device supports torch-->
     <bool name="support_torch">true</bool>
     <!--whether the device supports oldman mode-->
@@ -38,11 +35,11 @@
     <!--max number of burst images one time -->
     <integer name="burst_shoot_count">100</integer>
     <!--max cpu freq of the device-->
-    <integer name="cpu_max_freq">300</integer>
+    <integer name="cpu_max_freq">320</integer>
     <!-- whether support ai task button -->
     <bool name="support_ai_task">false</bool>
     <!-- whether support truetone -->
-    <bool name="support_truetone">true</bool>
+    <bool name="support_truetone">false</bool>
     <!-- whether support Macro Keyboard -->
     <bool name="support_mi_game_macro">true</bool>
     <!--whether the device supports record param-->
@@ -68,19 +65,13 @@
     <bool name="enable_flash_global">true</bool>
     <!--release time for the device, should be an unix timestamp-->
     <string name="release_time">1473868800000</string>
-    <!-- whether support screen compat -->
-    <bool name="screen_compat_supported">true</bool>
-    <integer-array name="screen_resolution_supported">
-        <item>1440</item>
-        <item>1080</item>
-    </integer-array>
     <!-- Sunlight mode threshold, 4096 level backlight is 1000, 2047 is 500-->
     <integer name="threashold_sunlight_brightness">1000</integer>
 
     <bool name="support_edgesuppression_with_sensor">false</bool>
     <!-- whether support notify dark mode to displayfeature -->
     <bool name="support_dark_mode_notify">true</bool>
-    <bool name="support_high_resolution">true</bool>
+    <bool name="support_high_resolution">false</bool>
     <!-- These camera grouped by role id can be access even if app is in camera_hide_logical_package_list -->
     <string-array name="camera_exposable_role_id">
         <!-- UW -->
@@ -155,10 +146,6 @@
     <!--These region support face unlock-->
     <string-array name="support_face_unlock_region_dom">
         <item>CN</item>
-    </string-array>
-    <!--These region support face unlock-->
-    <string-array name="support_face_unlock_region_global">
-        <item>ALL</item>
     </string-array>
     <!-- whether support multi face input -->
     <bool name="support_multi_face_input">true</bool>
@@ -286,13 +273,9 @@
     <bool name="support_adv_audio_bca">false</bool>
     <!-- whether support adv audio broadcast source-->
     <bool name="support_adv_audio_bcs">false</bool>
-    <!-- whether support opp high speed-->
-    <string name="not_support_opp_high_speed">mondrian</string>
 <!-- Bluethooth END -->
 
 <!-- Display BEGIN -->
-    <!-- Whether support decrease brightness for specific apps -->
-    <bool name="support_decrease_brightness_spec_app">false</bool>
     <!-- device support screen enhance engine -->
     <bool name="support_screen_enhance_engine">true</bool>
     <!-- whether support AI Display-->
@@ -411,10 +394,10 @@
     <bool name="support_autobrightness_optimize">true</bool>
     <!-- whether support_screen_on_delayed -->
     <bool name="support_screen_on_delayed">true</bool>
-    <!-- whether support low_flicker backlight -->
-    <bool name="support_low_flicker_backlight">false</bool>
-    <!-- whether show low flicker in display menu -->
-    <bool name="hide_flicker_backlight">false</bool>
+    <!-- whether support dc backlight -->
+    <bool name="support_dc_backlight">true</bool>
+    <!-- whether DC backlight incompatible with fps -->
+    <bool name="dc_backlight_fps_incompatible">true</bool>
     <integer-array name="display_version_18_knock_area">
         <!-- left  -->
         <item>270</item>
@@ -520,8 +503,8 @@
     </string-array>
     <!--   -->
     <string-array name="camera_adjust_picture_size_cmd_list">
-        <!-- camera id 0 set sensor size 64M, camera id 1 set sensor size 16M -->
-        <item>com.antutu:0, ssize, 9248, 6944;1, ssize, 4608, 3456</item>
+        <!-- camera id 0 set sensor size 108M, camera id 1 set sensor size 20M -->
+        <item>com.antutu:0, ssize, 8192, 6144;1, ssize, 6528, 4896</item>
     </string-array>
     <!--Successful flag of camera continuous auto focus  result-->
     <integer name="camera_focus_success_flag">2</integer>
@@ -649,8 +632,6 @@
 <!-- Power BEGIN -->
     <!-- whether support extreme mode only support perseus-->
     <bool name="support_extreme_battery_saver">false</bool>
-    <!--whether support cpudoze feature-->
-    <bool name="support_cpu_doze">true</bool>
 <!-- Power END -->
 
 <!-- Memory BEGIN -->
@@ -741,48 +722,23 @@
     <bool name="is_lower_size_panorama">false</bool>
     <!-- gamebooster game gunsight -->
     <bool name="support_game_gunsight">true</bool>
+    <!-- MIUI ADD: Sensor_LogEnhance-->
+    <!-- whether support sensor hal log-->
+    <bool name="support_sensor_hal_log">true</bool>
+    <!-- END Sensor_LogEnhance-->
 
     <!-- Do not enable this feature on other devices, except venus,zeus and unicorn -->
     <!-- Whether support autobrightness adjustment by application -->
     <bool name="support_autobrightness_by_application_category">false</bool>
-    <!-- open game dim featrue -->
-    <bool name="support_game_dim">true</bool>
-    <!-- open dim time from cloud featrue -->
-    <bool name="support_cloud_dim">true</bool>
-    <!-- open low power mode decrease brightness feature -->
-    <bool name="support_low_power_mode_decrease_brightness">true</bool>
-    <!-- fw/base support display temperature control -->
-    <bool name="support_temperature_control">true</bool>
-    <!-- Do not enable this feature on other devices, except thor, zizhan, unicorn and diting -->
+
+    <!-- Do not enable this feature on other devices, except thor, zizhan, unicorn and mayfly -->
     <!-- Whether support dolby version brighten -->
     <bool name="support_dolby_version_brighten">true</bool>
 
-    <!-- Do not enable this feature on other devices, except thor, zizhan and diting -->
+    <!-- Do not enable this feature on other devices, except thor, zizhan, unicorn and mayfly-->
     <!-- Whether support HDR version brighten to HBM -->
     <bool name="support_hdr_hbm_brighten">true</bool>
-
-    <!-- Do not enable this feature on other devices, except fuxi, nuwa, socrates and mondrian -->
-    <!-- Whether support Gallery HDR -->
-    <bool name="support_gallery_hdr">true</bool>
-
-    <!-- Do not enable this feature on other devices, except diting、nuwa、socrates and mondrian -->
-    <!-- Whether support backlight animation when manually slidle the brightness bar -->
-    <bool name="support_manual_dimming">true</bool>
-
-    <!-- open video idle dim feature -->
-    <bool name="support_video_idle_dim">true</bool>
-
 <!-- Unkonwn properties END(not exist in the code) -->
-    <!--  gallery setting  -->
-    <bool name="gallery_support_media_feature">true</bool>
-    <bool name="gallery_support_video_compress">true</bool>
-    <bool name="gallery_support_analytic_face_and_scene">true</bool>
-    <string name="gallery_cpu_series">8450</string>
-    <bool name="gallery_support_time_burst_video">true</bool>
-    <integer name="gallery_device_series">1</integer>
-
-    <!-- Whether support Google rsa agreement -->
-    <bool name="support_google_rsa_protocol">true</bool>
 
     <string-array name="dynamic_partition_list">
         <item>/system</item>
@@ -803,5 +759,5 @@
     </string-array>
     <string name="partition_name_path">/dev/block/by-name/</string>
 </features>
-
+<!-- END Adapt_MIUIAdaptFrame-->
 
