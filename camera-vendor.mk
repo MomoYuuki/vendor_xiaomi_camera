@@ -10,8 +10,10 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/camera/proprietary/system/lib64/libcamera_mianode_jni.xiaomi.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libcamera_mianode_jni.xiaomi.so \
     vendor/xiaomi/camera/proprietary/system/lib64/libmicampostproc_client.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libmicampostproc_client.so \
     vendor/xiaomi/camera/proprietary/system/lib64/libmiocr.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libmiocr.so \
+    vendor/xiaomi/camera/proprietary/system/lib64/libmisys_jni.xiaomi.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libmisys_jni.xiaomi.so \
     vendor/xiaomi/camera/proprietary/system/lib64/vendor.xiaomi.hardware.campostproc@1.0.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/vendor.xiaomi.hardware.campostproc@1.0.so \
-    vendor/xiaomi/camera/proprietary/system/etc/device_features/mondrian.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/device_features/mondrian.xml
+    vendor/xiaomi/camera/proprietary/system/etc/device_features/mayfly.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/device_features/mayfly.xml    \
+    vendor/xiaomi/camera/proprietary/system/etc/public.libraries-xiaomi.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/public.libraries-xiaomi.txt
     
 PRODUCT_PACKAGES += \
     MiuiCamera
